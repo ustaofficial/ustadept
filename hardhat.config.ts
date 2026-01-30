@@ -1,26 +1,25 @@
 import dotenv from "dotenv";
-dotenv.config({ path: process.env.ENV_FILE ?? ".env" });
+import { defineConfig, configVariable } from "hardhat/config";
 
-import { configVariable } from "hardhat/config";
-import type { HardhatUserConfig } from "hardhat/config";
-
-import hardhatEthers from "@nomicfoundation/hardhat-ethers";
-import hardhatEthersChaiMatchers from "@nomicfoundation/hardhat-ethers-chai-matchers";
-import hardhatMocha from "@nomicfoundation/hardhat-mocha";
+import hardhatToolboxMochaEthers from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 import hardhatVerify from "@nomicfoundation/hardhat-verify";
 
-const config: HardhatUserConfig = {
-  plugins: [
-    hardhatEthers,
-    hardhatEthersChaiMatchers,
-    hardhatMocha,
-    hardhatVerify,
-  ],
+dotenv.config({ path: process.env.ENV_FILE ?? ".env" });
+
+export default defineConfig({
+  plugins: [hardhatToolboxMochaEthers, hardhatVerify],
 
   solidity: {
     version: "0.8.20",
     settings: {
       optimizer: { enabled: true, runs: 200 },
+      evmVersion: "shanghai",
+    },
+  },
+
+  paths: {
+    tests: {
+      mocha: "./test",
     },
   },
 
@@ -29,13 +28,7 @@ const config: HardhatUserConfig = {
       type: "http",
       chainType: "l1",
       url: configVariable("SEPOLIA_RPC_URL"),
-      accounts: [configVariable("DEPLOYER_PRIVATE_KEY")],
-    },
-    mainnet: {
-      type: "http",
-      chainType: "l1",
-      url: configVariable("MAINNET_RPC_URL"),
-      accounts: [configVariable("DEPLOYER_PRIVATE_KEY")],
+      accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
   },
 
@@ -44,6 +37,4 @@ const config: HardhatUserConfig = {
       apiKey: configVariable("ETHERSCAN_API_KEY"),
     },
   },
-};
-
-export default config;
+});
