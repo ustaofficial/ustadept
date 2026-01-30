@@ -1,43 +1,39 @@
 {
   "name": "usta-token",
   "version": "1.0.0",
-  "private": true,
-  "license": "MIT",
   "type": "module",
-  "engines": {
-    "node": ">=20"
-  },
+  "private": true,
   "scripts": {
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "hardhat test",
-    "ci": "npm run typecheck && npm test",
     "clean": "hardhat clean",
-    "audit:check": "node scripts/audit-high.mjs",
-    "deploy:sepolia": "hardhat run scripts/deploy.sepolia.ts --build-profile production --network sepolia",
-    "deploy:mainnet": "hardhat run scripts/deploy.mainnet.ts --build-profile production --network mainnet",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "console:sepolia": "cross-env ENV_FILE=.env.prod hardhat console --network sepolia",
+    "deploy:sepolia": "cross-env ENV_FILE=.env.prod hardhat run scripts/deploy.ts --network sepolia",
+    "verify:sepolia": "cross-env ENV_FILE=.env.prod hardhat verify --network sepolia",
+    "verify:sepolia:v2": "cross-env ENV_FILE=.env.prod hardhat verify --network sepolia 0x5Eb872baf62033d0173D368AE529d507E976213F 0x73EA5AA254984ccd2665Bed07355C6F2f79C7f18",
     "deployments:print": "node scripts/deployments-print.mjs",
-    "verify:sepolia:v2": "node scripts/verify.mjs sepolia v2 --build-profile production",
-    "verify:sepolia:v3": "node scripts/verify.mjs sepolia v3 --build-profile production",
-    "verify:sepolia:v3:force": "node scripts/verify.mjs sepolia v3 --build-profile production --force",
-    "verify:mainnet:v1": "node scripts/verify.mjs mainnet v1 --build-profile production",
-    "verify:mainnet:v1:force": "node scripts/verify.mjs mainnet v1 --build-profile production --force"
+    "audit:fix": "npm audit fix",
+    "audit:report": "npm audit",
+    "audit:check": "node scripts/audit-high.mjs",
+    "audit:safe": "npm run audit:fix && npm test && npm run audit:check"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "4.0.4",
-    "@nomicfoundation/hardhat-ethers-chai-matchers": "3.0.2",
-    "@nomicfoundation/hardhat-mocha": "3.0.9",
-    "@nomicfoundation/hardhat-verify": "3.0.8",
-    "@types/chai": "5.2.3",
-    "@types/mocha": "10.0.10",
-    "@types/node": "20.19.30",
-    "chai": "5.3.3",
-    "dotenv": "17.2.3",
-    "ethers": "6.16.0",
-    "hardhat": "3.1.5",
-    "typescript": "5.9.3"
+    "@nomicfoundation/hardhat-ethers": "^4.0.4",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.2",
+    "@nomicfoundation/hardhat-verify": "^3.0.8",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.19.7",
+    "chai": "^5.3.3",
+    "cross-env": "^7.0.3",
+    "ethers": "^6.16.0",
+    "hardhat": "^3.1.5",
+    "mocha": "^11.7.5",
+    "typescript": "~5.8.0"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "5.4.0"
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^17.2.3"
   },
   "overrides": {
     "diff": "8.0.3"
