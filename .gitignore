@@ -1,0 +1,43 @@
+# Node modules
+/node_modules
+
+# Build outputs
+/dist
+/bundle
+
+# Hardhat artifacts & cache
+/artifacts
+/cache
+/coverage
+
+# TypeChain outputs (hangisini kullanıyorsanız)
+/types
+/typechain
+/typechain-types
+
+# Hardhat / tooling caches
+/compile-cache.json
+*.dbg.json
+
+# Ignition (Hardhat 3) - kullanıyorsan aç
+#/ignition/deployments
+
+# Env files (asla commitlenmesin)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+audit.json 
+audit.txt 
