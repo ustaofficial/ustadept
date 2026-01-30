@@ -1,41 +1,30 @@
 {
   "name": "usta-token",
   "version": "1.0.0",
-  "type": "module",
   "private": true,
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "clean": "hardhat clean",
-    "compile": "hardhat compile",
     "test": "hardhat test",
-    "console:sepolia": "cross-env ENV_FILE=.env.prod hardhat console --network sepolia",
-    "deploy:sepolia": "cross-env ENV_FILE=.env.prod hardhat run scripts/deploy.ts --network sepolia",
-    "verify:sepolia": "cross-env ENV_FILE=.env.prod hardhat verify --network sepolia",
-    "verify:sepolia:v2": "cross-env ENV_FILE=.env.prod hardhat verify --network sepolia 0x5Eb872baf62033d0173D368AE529d507E976213F 0x73EA5AA254984ccd2665Bed07355C6F2f79C7f18",
-    "deployments:print": "node scripts/deployments-print.mjs",
-    "audit:fix": "npm audit fix",
-    "audit:report": "npm audit",
     "audit:check": "node scripts/audit-high.mjs",
-    "audit:safe": "npm run audit:fix && npm test && npm run audit:check"
+    "deploy:sepolia": "hardhat run scripts/deploy.sepolia.ts --network sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy.mainnet.ts --network mainnet",
+    "deployments:print": "node scripts/deployments-print.mjs",
+    "verify:sepolia:v2": "hardhat verify --network sepolia"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.0.4",
-    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.2",
     "@nomicfoundation/hardhat-verify": "^3.0.8",
-    "@types/chai": "^5.2.3",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^22.19.7",
-    "chai": "^5.3.3",
-    "cross-env": "^7.0.3",
-    "ethers": "^6.16.0",
-    "hardhat": "^3.1.5",
-    "mocha": "^11.7.5",
-    "typescript": "~5.8.0"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.4.0",
-    "dotenv": "^17.2.3"
+    "@types/node": "^20.11.0",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.9.0",
+    "hardhat": "^3.0.0",
+    "typescript": "^5.3.3"
   },
   "overrides": {
     "diff": "8.0.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
   }
 }

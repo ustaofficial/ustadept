@@ -39,5 +39,5 @@ yarn-error.log*
 .idea/
 .vscode/
 *.swp
-audit.json 
-audit.txt 
+audit.json
+audit.txt
