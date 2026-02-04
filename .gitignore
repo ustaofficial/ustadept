@@ -40,4 +40,4 @@ yarn-error.log*
 .vscode/
 *.swp
 audit.json
-audit.txt
+audit.txttree.txt
