@@ -41,3 +41,4 @@ yarn-error.log*
 *.swp
 audit.json
 audit.txttree.txt
+tree.txt
