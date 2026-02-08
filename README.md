@@ -1,0 +1,2 @@
+# ustadept
+Usta bilir
