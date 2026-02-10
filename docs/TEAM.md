@@ -1,11 +1,11 @@
-# Team — Ustadept / USTA
+# Team - Ustadept / USTA
 
 This page lists the individuals responsible for this project.
 
 ## Founder
 
-**Hasan Sezer** — Founder / Maintainer  
-- LinkedIn: <PASTE_LINKEDIN_URL_HERE>
+**Hasan Sezer** - Founder / Maintainer
+- LinkedIn: https://www.linkedin.com/in/hasansezer1/
 - GitHub: https://github.com/ustaofficial
 - Contact: ustadept@ustadept.com
 
