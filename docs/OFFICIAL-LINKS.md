@@ -8,6 +8,7 @@ If a link is not here, treat it as **unofficial**.
 - Website: https://www.ustadept.com/
 - Contact email: ustadept@ustadept.com
 - GitHub org: https://github.com/ustaofficial
+- LinkedIn (Founder): https://www.linkedin.com/in/hasansezer1/
 
 ## Token contracts (canonical)
 
