@@ -1,7 +1,8 @@
-# Official links — USTA Token
+# Official links (USTA / Ustadept)
 
-This file lists the **only** official references for USTA.
-If a link is not here, treat it as **unofficial**.
+This file is the single source of truth for what is **official**.
+
+If a link is not listed here, treat it as **unofficial**.
 
 ## Project
 
@@ -10,6 +11,11 @@ If a link is not here, treat it as **unofficial**.
 - GitHub org: https://github.com/ustaofficial
 - GitHub repo: https://github.com/ustaofficial/ustadept
 - LinkedIn (Founder): https://www.linkedin.com/in/hasansezer1/
+
+## Token logo (public download links)
+
+- Token logo (32×32 SVG): https://raw.githubusercontent.com/ustaofficial/ustadept/main/branding/token/usta_32.svg
+- Token logo (64×64 PNG): https://raw.githubusercontent.com/ustaofficial/ustadept/main/branding/token/usta_64.png
 
 ## Official social profiles
 
