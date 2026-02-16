@@ -24,6 +24,9 @@ If a link is not listed here, treat it as **unofficial**.
 - YouTube: https://www.youtube.com/@Ustadept
 - Instagram: https://www.instagram.com/ustadept/
 - Reddit: https://www.reddit.com/user/ustadept/
+- Medium: https://medium.com/@ustadept
+- Slack: https://ustadept.slack.com/
+- OpenSea: https://opensea.io/Ustadept
 
 ## Token contracts (canonical)
 
